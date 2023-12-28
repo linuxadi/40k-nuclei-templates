@@ -1,0 +1,31 @@
+info:
+  id: bitbucket-pipelines
+  name: Bitbucket Pipelines Configuration Exposure - Detect
+  author: OpenAI
+  description: Template to detect exposed Bitbucket Pipelines configuration files
+  severity: Medium
+  classification:
+    country: any
+    tags:
+      - bitbucket
+      - pipelines
+
+  matcher-condition: and
+
+  requests:
+      method: GET
+      path:
+        - "/bitbucket-pipelines.yml"
+        - "/bitbucket-pipelines.yaml"
+      description: Attempt to retrieve Bitbucket Pipelines configuration files
+      condition: and
+
+  matchers:
+    - pattern: "pipelines:"
+      type: body
+      description: Bitbucket Pipelines configuration file containing exposed pipeline configuration
+
+  response:
+    - status:
+        - 200
+      description: Successful response status

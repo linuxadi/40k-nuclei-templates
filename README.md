@@ -2,3 +2,7 @@
  40,000+ Nuclei templates for security scanning and detection across diverse web applications and services
 
  source of these nuclei templates :- https://github.com/emadshanab/Nuclei-Templates-Collection
+
+ disclaimer :- please run this templates on vps/rdp because this is 40K+ nuclei template from publically upload and we don't know which template what contain
+
+ you can use github.dev for this as a vps 
